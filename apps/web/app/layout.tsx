@@ -3,7 +3,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { ConvexReactClient } from "convex/react";
-import { ConvexProviderWithClerk } from "convex/react-clerk";
 
 import "@workspace/ui/globals.css";
 import { Providers } from "@/components/providers";
@@ -31,9 +30,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <ClerkProvider>
-          <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-            <Providers>{children}</Providers>
-          </ConvexProviderWithClerk>
+          <Providers>{children}</Providers>
         </ClerkProvider>
       </body>
     </html>
