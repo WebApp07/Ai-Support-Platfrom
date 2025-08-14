@@ -78,6 +78,9 @@ importers:
 
   apps/widget:
     dependencies:
+      '@clerk/nextjs':
+        specifier: ^6.29.0
+        version: 6.29.0(next@15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@workspace/backend':
         specifier: workspace:*
         version: link:../../packages/backend
