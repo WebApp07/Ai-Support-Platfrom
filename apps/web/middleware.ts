@@ -16,17 +16,6 @@ export default clerkMiddleware(async (auth, req) => {
   if (!isPublicRouter(req)) {
     await auth.protect();
   }
-
-  if (userId && !orgId && !isOrgFreeRoute(req)) {
-    const searchParams = new URLSearchParams({ redirectUrl: req.url });
-
-    const orgSelection = new URL(
-      `/org-selection?${searchParams.toString()}`,
-      req.url
-    );
-
-    return NextResponse.redirect(orgSelection);
-  }
 });
 
 export const config = {
